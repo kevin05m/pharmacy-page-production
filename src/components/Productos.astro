@@ -1,0 +1,100 @@
+---
+import Section from "./Section.astro"
+---
+
+<Section
+  title="Información de Medicamentos"
+  subtitle="Encuentra todo nuestro stock aquí con la información de cada uno"
+  color="black"
+  id="productos"
+>
+<div class="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 mt-6 place-items-center">
+  <!-- Ibuprofeno -->
+  <div class="w-full max-w-sm border border-gray-200 rounded-lg p-5 bg-white/90 shadow-sm hover:shadow-lg transition text-center">
+    <img src="/ibuprofeno.png" alt="Ibuprofeno" class="mx-auto mb-3 w-14 h-14 object-contain" />
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Ibuprofeno 400mg</h3>
+    <p class="text-gray-700 mb-2">Antiinflamatorio para dolor e inflamación.</p>
+    <p class="text-sm text-gray-500">Uso: cada 8 horas con alimentos.</p>
+  </div>
+
+  <!-- Paracetamol -->
+  <div class="w-full max-w-sm border border-gray-200 rounded-lg p-5 bg-white/90 shadow-sm hover:shadow-lg transition text-center">
+    <img src="/paracetamol.avif" alt="Paracetamol" class="mx-auto mb-3 w-14 h-14 object-contain" />
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Paracetamol 500mg</h3>
+    <p class="text-gray-700 mb-2">Analgésico y antipirético para dolores leves y fiebre.</p>
+    <p class="text-sm text-gray-500">Uso: cada 6 a 8 horas.</p>
+  </div>
+
+  <!-- Finalin Forte -->
+  <div class="w-full max-w-sm border border-gray-200 rounded-lg p-5 bg-white/90 shadow-sm hover:shadow-lg transition text-center">
+    <img src="finalin.png" alt="Finalin Forte" class="mx-auto mb-3 w-14 h-14 object-contain" />
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Finalin Forte</h3>
+    <p class="text-gray-700 mb-2">Analgésico y antiinflamatorio de acción rápida.</p>
+    <p class="text-sm text-gray-500">Uso: según indicación médica.</p>
+  </div>
+
+  <!-- Pastilla para la presión -->
+  <div class="w-full max-w-sm border border-gray-200 rounded-lg p-5 bg-white/90 shadow-sm hover:shadow-lg transition text-center">
+    <img src="/meds/presion.png" alt="Medicamento para presión" class="mx-auto mb-3 w-14 h-14 object-contain" />
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Losartán 50mg</h3>
+    <p class="text-gray-700 mb-2">Antihipertensivo para controlar la presión arterial.</p>
+    <p class="text-sm text-gray-500">Uso: una vez cada 24 horas.</p>
+  </div>
+
+  <!-- Aspirina -->
+  <div class="w-full max-w-sm border border-gray-200 rounded-lg p-5 bg-white/90 shadow-sm hover:shadow-lg transition text-center">
+    <img src="/meds/aspirina.png" alt="Aspirina" class="mx-auto mb-3 w-14 h-14 object-contain" />
+    <h3 class="text-xl font-semibold text-gray-900 mb-2">Aspirina 100mg</h3>
+    <p class="text-gray-700 mb-2">Anticoagulante y analgésico de uso común.</p>
+    <p class="text-sm text-gray-500">Uso: una vez al día o según indicación.</p>
+  </div>
+</div>
+  <div slot="footer" class="gap-x-6 flex mx-auto">
+    <a
+      class="border-[3px] border-gray-800 bg-gray-800 text-sm rounded font-medium text-white px-16 py-2 inline-block transition-colors hover:border-gray-500 hover:bg-gray-500"
+      href="#"
+    >
+      Ver Horarios</a
+    >
+    <a
+      class="bg-white text-sm rounded font-medium px-12 py-2 transition-colors hover:bg-black hover:text-white inline-flex justify-center items-center text-black"
+      href="#"
+    >
+      En Stock</a
+    >
+  </div>
+  <video
+  slot="background"
+  autoplay
+  muted
+  loop
+  playsinline
+  class="h-full w-full object-cover object-center"
+>
+  <source src="productos.webm" type="video/webm" />
+  Tu navegador no soporta videos HTML5.
+</video>
+</Section>
+
+<script>
+  function isEdge() {
+    if (
+      navigator.userAgent.indexOf("Edge") > -1 ||
+      navigator.userAgent.indexOf("Edg") > -1
+    ) {
+      return true
+    } else {
+      return false
+    }
+  }
+
+  let imageElement = document.querySelector(
+    "#bg-image-productos"
+  ) as HTMLImageElement
+
+  if (isEdge()) {
+    imageElement.src = "productos.webp"
+  } else {
+    imageElement.src = "productos.avif"
+  }
+</script>

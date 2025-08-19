@@ -1,11 +1,25 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import Accessories from "../components/Accessories.astro";
+import HeroSection from "../components/HeroSection.astro";
+import LandingHeader from "../components/LandingHeader.astro";
+import Productos from "../components/Productos.astro";
+import Layout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
+<Layout title="Farmacia Victoria - Guayaquil">
+  <LandingHeader />
+
+  <main
+    class="snap-y snap-mandatory relative w-full h-screen overflow-y-auto overflow-x-hidden scroll-smooth"
+  >
+    <div class="snap-center">
+      <HeroSection />
+    </div>
+    <div class="snap-center">
+      <Productos />
+    </div>
+    <div class="snap-center">
+      <Accessories />
+    </div>
+  </main>
 </Layout>
